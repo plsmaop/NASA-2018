@@ -24,9 +24,9 @@ winning_receipt=()
 while read -r raw_line || [[ -n "$raw_line" ]]; do
     (( receipt_index++ ))
     # validity
-    if [[ ${raw_line} != [0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] ]] &&
-    [[ ${raw_line} != [A-Za-z][A-Za-z]-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] ]] &&
-    [[ ${raw_line} != [A-Za-z][A-Za-z][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9] ]]; then
+    if [[ ${raw_line} != [0-9]{8} ]] &&
+    [[ ${raw_line} != [A-Za-z]{2}-[0-9]{8} ]] &&
+    [[ ${raw_line} != [A-Za-z]{2}[0-9][0-9]{8} ]]; then
         continue
     fi
 
